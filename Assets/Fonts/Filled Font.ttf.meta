@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 574003e5d93e35c4aac40f4979b963cd
+guid: abd455e9be95f7140a540abf2eeda717
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,11 +10,12 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - SF Pro Text
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 574003e5d93e35c4aac40f4979b963cd, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 1
+  useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
