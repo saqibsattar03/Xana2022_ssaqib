@@ -11,10 +11,10 @@ public class Validator
         return emailRegex.IsMatch(emailString);
     }
 
-    public static bool PhoneValidation(long phoneNumber)
+    public static bool PhoneValidation(string phoneNumber)
     {
         Regex phoneNumberRegex = new Regex(@"^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$");
-        return phoneNumberRegex.IsMatch(phoneNumber.ToString());
+        return phoneNumberRegex.IsMatch(phoneNumber);
 
     }
     public static bool PasswordValidation(string password)
@@ -53,12 +53,6 @@ public class Validator
 
             return false;
         }
-
-        // else if (!hasSymbols.IsMatch(input))
-        // {
-        //     ErrorMessage = "Password should contain at least one special case character.";
-        //     return false;
-        // }
         else
         {
             return true;
