@@ -20,6 +20,7 @@ public class NavigationClass : MonoBehaviour
     [SerializeField] TMP_InputField reenterPasswordField;
     [SerializeField] TMP_InputField userNameField;
 
+
     //Warning Text References
     [SerializeField] TMP_Text emailWarningText;
     [SerializeField] TMP_Text passwordWarningText;
@@ -27,8 +28,6 @@ public class NavigationClass : MonoBehaviour
     [SerializeField] TMP_Text passwordMismatchWarningText;
     [SerializeField] TMP_Text welcoomeScreenText;
     [SerializeField] TMP_Text timerText;
-
-
 
     //Button References
     [SerializeField] Button loginButton;
@@ -43,12 +42,12 @@ public class NavigationClass : MonoBehaviour
 
     //Drop down reference
     public TMP_Dropdown dropdown;
+
     //Panels References
     public List<GameObject> panelList;
     public GameObject startingPanel;
 
-    // Verification code 
-
+    // Verification code Input Field References
     public int verificationCode1;
     public int verificationCode2;
     public int verificationCode3;
@@ -483,5 +482,4 @@ public class NavigationClass : MonoBehaviour
         timerValue = 600;
         Timer();
     }
-
 }
