@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
-using System.IO;
 
 public class ArtBoardManager : MonoBehaviour
 {
@@ -95,7 +94,6 @@ public class ArtBoardManager : MonoBehaviour
         RemoveContent(subCategoriesTransfrom);
         foreach (var subcategoryData in categoryData.subCategory)
         {
-            // var icons = LoadIcon<Sprite>("SubCategoryButtonIcons/", subcategoryData.subCategoryActivatedIconId);
             var icons = LoadIcon<Sprite>("SubCategoryButtonIcons/", subcategoryData.subCategoryActivatedIconId);
             Button subCatBtn = Instantiate(subCategoriesButtonPrefab, subCategoriesTransfrom);
             subCatBtn.name = subcategoryData.subCategoryName;
@@ -110,7 +108,6 @@ public class ArtBoardManager : MonoBehaviour
                 ActivateColorPalete(subcategoryData);
             });
             var previousButton = subCatBtn;
-            Debug.Log("previous button name = " + previousButton.name);
         }
     }
     void ButtonSelection(Button currentButton)
@@ -123,6 +120,11 @@ public class ArtBoardManager : MonoBehaviour
         previousButton = currentButton;
         var name = currentButton.gameObject.GetComponent<Image>().sprite.name;
         currentButton.gameObject.GetComponent<Image>().sprite = LoadIcon<Sprite>("Active Icons/", name);
+        // if (isFeautreButton)
+        // {
+        //     currentButton.transform.GetChild(0).GetComponent<Text>();
+        //     // currentButton.color = Color.blue;
+        // }
     }
 
     void FetchingFeatureProductsList(List<SubFeature> subFeatures, List<ProductDetail> products, SubCategory subcategoryData)
@@ -227,6 +229,8 @@ public class ArtBoardManager : MonoBehaviour
             Destroy(content.gameObject);
         }
     }
+
+
     //Resources load Method 
     T LoadIcon<T>(string reourcesFolder, string path) where T : Object
     {
